@@ -71,7 +71,9 @@ module.exports = {
         extensions: ['.js', '.json', '.jsx', '.ts', '.tsx', '.scss'],
         alias: {
             '@': path.resolve(__dirname, './src'),
-            '@components': path.resolve(__dirname, './src/components')
+            '@components': path.resolve(__dirname, './src/components'),
+            '@helpers': path.resolve(__dirname, './src/helpers'),
+            '@actions': path.resolve(__dirname, './src/actions'),
         }
     },
     mode: NODE_ENV ? NODE_ENV : 'production',
@@ -159,9 +161,10 @@ module.exports = {
         ]
     },
     devServer: {
-        port: 3000,
+        port: 3088,
         hot: true,
-        static: './build'
+        static: './build',
+        historyApiFallback: true
     },
     plugins: plugins()
 }
