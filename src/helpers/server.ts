@@ -5,7 +5,8 @@ const server: string = 'http://localhost:5402/api/';
 const Authorization: string = CookieHelper.get('chat_session_id') || '';
 axios.defaults.headers.common['Authorization'] = Authorization
 
-export const Server: (method: 'get'|'post'|'put'|'delete', url: string, data?: object) => Promise<any> = (method, url, data) => {
+export const Server: (method: 'get'|'post'|'put'|'delete', url: string, data?: any) => Promise<any> = (method, url, data) => {
+    data = method === 'get' ? {params: new URLSearchParams(data)} : data
     return axios[method](`${server}${url}`, data)
         .then(resp => {
             const {data} = resp;

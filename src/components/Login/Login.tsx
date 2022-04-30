@@ -3,7 +3,7 @@ import {Container} from '@mui/material';
 import Form, {Fields} from 'sbx-react-form';
 
 import './Login.scss';
-import {login} from "@actions/Users";
+import {login} from "@actions/users";
 
 
 export const Login = () => {

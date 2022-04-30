@@ -1,12 +1,10 @@
 import React from 'react';
 import Table from "sbx-react-table";
 import {getUsers} from "@actions/users";
-import {Header} from "@components/Header/Header";
 
 export const Users = () => {
 
     return <div>
-        <Header/>
         <Table
             name="fiatDeposits"
             className="table-striped"
